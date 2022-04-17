@@ -1,0 +1,763 @@
+<!-- <?php	
+	require "./assets/less/lessc.inc.php";	
+	function autoCompileLess($inputFile, $outputFile) {
+	  // load the cache
+	  $cacheFile = $inputFile.".cache";
+	  if (file_exists($cacheFile)) {
+		$cache = unserialize(file_get_contents($cacheFile));
+	  } else {
+		$cache = $inputFile;
+	  }
+	  $less = new lessc;
+	  $newCache = $less->cachedCompile($cache);
+	  if (!is_array($cache) || $newCache["updated"] > $cache["updated"]) {
+		file_put_contents($cacheFile, serialize($newCache));
+		file_put_contents($outputFile, $newCache['compiled']);
+	  }
+	}
+	autoCompileLess('./assets/less/style.less', './assets/css/style.css');
+// class="col-xs-6 wow fadeIn" data-wow-delay="0.3s" data-wow-duration="0.6s"
+?> -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="width=1300px">-->
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+</head>
+
+<body>
+    <!--
+    <div class="wrapper">
+        <div id="mobile-menu">
+            <div class="block">
+                <ul>
+                    <li><a href=""><span>Link</span></a></li>
+                    <li><a href=""><span>Link</span></a></li>
+                    <li><a href=""><span>Link</span></a></li>
+                    <li><a href=""><span>Link</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <header>
+            <div class="container">
+                <div class="block df jb">
+                    <a class="logo" href="">
+                        LOGO
+                    </a>
+                    <div class="menu">
+
+                        <button id="burger-menu">
+                            <div class="box box_item1"></div>
+                            <div class="box box_item2"></div>
+                            <div class="box box_item3"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <section class="help">
+            <div class="container">
+                <div class="tabs">
+                    <ul class="tabs__caption">
+                        <li class="active">Таб 1</li>
+                        <li class="">Таб 2</li>
+                        <li class="">Таб 3</li>
+                    </ul>
+                    <div class="tabs__content active">
+                        Контент 1 таба
+                    </div>
+                    <div class="tabs__content">
+                        Контент 2 таба
+                    </div>
+                    <div class="tabs__content">
+                        Контент 3 таба
+                    </div>
+                </div>
+                <hr>
+                <button class="md-trigger" data-modal="modal-1">Модальное окно</button>
+                <hr>
+
+
+            </div>
+
+        </section>
+
+    </div>
+    <div class="md-modal md-effect-1" id="modal-1">
+        <div class="md-content">
+            <h3>Модальные окна</h3>
+            <div>
+                <p> Это модальное окно. Вы можете выполнять следующие действия с ним:</p>
+                <ul>
+                    <li><strong>Читать:</strong> модальные окна, вероятно, несут важную текстовую информацию, так что не
+                        забудьте прочитать то, что в них написано.</li>
+                    <li><strong>Смотреть:</strong> модальные окна несут визуальную информацию, на которую приятно
+                        смотреть.</li>
+                    <li><strong>Закрыть:</strong> нажмите на кнопку, чтобы закрыть модальное окно.</li>
+                </ul>
+                <button class="md-close">Закрыть!</button>
+            </div>
+        </div>
+    </div>
+    <div class="md-overlay"></div> -->
+
+
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="logo">
+                    <a href="" class="logo__link">
+                        <img src="assets/img/logo_combo.svg" alt="">
+                    </a>
+                </div>
+                <ul class="menu-main">
+                    <li class="menu-main__item">
+                        <a href="№" class="menu-main__link scroll" data-target=".slide-1">о форуме</a>
+                    </li>
+                    <li class="menu-main__item">
+                        <a href="#" class="menu-main__link scroll" data-target=".slide-2">формат</a>
+                    </li>
+                    <li class="menu-main__item">
+                        <a href="#" class="menu-main__link scroll" data-target=".slide-3">программа</a>
+                    </li>
+                    <li class="menu-main__item">
+                        <a href="#" class="menu-main__link scroll" data-target=".slide-4">спикеры</a>
+                    </li>
+                </ul>
+                <button class="btn registration-btn scroll" data-target=".slide-5"> зарегистрироваться</button>
+
+            </div>
+            <div id="page" class="wrapper">
+                <div id="mobile-menu">
+                    <div class="block">
+                        <ul>
+                            <li> <a href="№" class="menu-main__link scroll" data-target=".slide-1">о форуме</a></li>
+                            <li><a href="#" class="menu-main__link scroll" data-target=".slide-2">формат</a></li>
+                            <li><a href="#" class="menu-main__link scroll" data-target=".slide-3">программа</a></li>
+                            <li><a href="#" class="menu-main__link scroll" data-target=".slide-4">спикеры</a></li>
+                            <button class="mobile-btn scroll" data-target=".slide-5">зарегистрироваться</button>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <!--   Кнопка Мобильного Меню --->
+                    <button id="burger-menu">
+                        <div class="box box_item1"></div>
+                        <div class="box box_item2"></div>
+                        <div class="box box_item3"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+    <div class="gb">
+        <section class="sec1">
+            <!-- <div class="img-left">
+                <img class="left" src="assets/img/bg-1.svg" alt="">
+                <img class="left-mobile" src="assets/img/Group2.svg" alt="">
+            </div> -->
+            <div class="container">
+
+                <div class="main">
+                    <div class="main__img">
+                        <img src="assets/img/center.png" alt="">
+                    </div>
+                    <h1 class="main__title">Город – это мы!</h1>
+                    <div class="main__subtitle">
+                        форум социальных технологий <span>15-16 апреля 2022 года</span>
+                    </div>
+                    <div class="main__text">
+                        <div>устойчивые города</div> в условиях турбулентности
+                    </div>
+                    <button class="btn main__btn scroll" data-target=".slide-5">зарегистрироваться</button>
+
+                </div>
+
+            </div>
+            <!-- <div class="img-right">
+                <img class="right" src="assets/img/bg-2.svg" alt="">
+                <img class="right-mobile" src="assets/img/Group33.png" alt="">
+            </div> -->
+
+        </section>
+        <section class="sec2 slide-1">
+
+            <div class="container">
+                <div class="title">Устойчивые города<br>
+                    в условиях турбулентности</div>
+                <div class="text">Форум социальных технологий — это уникальная площадка, где активные горожане,
+                    бизнес-сообщество и эксперты обсуждают актуальные тренды современной реальности, делятся опытом и
+                    эффективными социальными технологиями.</div>
+                <div class="text2">В этом году мы обсудим значимость развития городов, талантов и технологий в новых
+                    реалиях, важность сообществ и взаимоподдержки. Будем делиться опытом, дискуссировать, знакомиться,
+                    продуктивно и приятно проводить время. </div>
+                <div class="text3">Участие в форуме бесплатное!</div>
+                <div class="title2">Треки</div>
+                <div class="track">
+
+
+                    <div class="track__item">
+                        <img src="assets/img/icon-team.svg" alt="">
+                        <div class="track__item-title">ЛЮДИ</div>
+                        <div class="track__item-text">Развитие талантов.<br>
+                            Город для горожан.<br>
+                            Образование будущего.</div>
+                    </div>
+                    <div class="track__item">
+                        <img src="assets/img/icon.svg" alt="">
+                        <div class="track__item-title">СРЕДА ДЛЯ ЖИЗНИ</div>
+                        <div class="track__item-text">Развитие города.<br>
+                            Общественные пространства.<br> Соучастие и партнерство.</div>
+                    </div>
+
+                    <div class="track__item aaa">
+
+                        <img src="assets/img/tech.svg" alt="">
+                        <div class="track__item-title">ТЕХНОЛОГИИ</div>
+                        <div class="track__item-text">Цифровизация городских сервисов.
+                            Онлайн-инструменты.<br>
+                            Тренды будущего.</div>
+
+                    </div>
+                    <div class="track__bg">
+                        <img src="assets/img/bg3.svg" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="format slide-2">
+        <div class="container">
+            <div class="title-center">формат</div>
+            <div class="format__text">Форум социальных технологий в 2022 году будет проходить в гибридном формате
+            </div>
+            <div class="format__wrap">
+                <div class="wrap">
+                    <div class="format__box">
+                        <div class="format__box-title">Офлайн в Норильске</div>
+                        <div class="format__box-content format__box-content--map">
+                            <div class="format__box-date">15 апреля</div>
+                            <div class="format__box-name">Спорткомплекс "Айка"
+                                <div> ул. 50 Лет Октября, 6</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="format__box">
+                        <div class="format__box-content format__box-content--map">
+                            <div class="format__box-date">16 апреля</div>
+                            <div class="format__box-name">Креативное пространство Агентства развития Норильска (АРН)
+                                <div> ул. Комсомольская, 33а</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="format__box">
+                        <div class="format__box-title">онлайн</div>
+                        <div class="format__box-content format__box-content--web">
+                            <div class="format__box-name">Доступ к записям форума, которые можно смотреть из любой
+                                точки
+                                мира</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="format__btn">
+                <button class="btn main__btn scroll" data-target=".slide-5"">зарегистрироваться</button>
+            </div>
+
+        </div>
+    </section>
+    <section class=" sec3">
+                    <div class="container">
+                        <div class="title">Почему стоит принять участие? </div>
+                        <div class="sec3__box">
+                            <div class="sec3__box-item">Актуальные темы и современные тренды. Мы собрали все самое
+                                важное.</div>
+                            <div class="sec3__box-item">Интересные форматы. Скучно точно не будет!</div>
+                            <div class="sec3__box-item">Возможность задать вопросы и получить содержательные ответы.
+                            </div>
+                            <div class="sec3__box-item">Живое общение и поддержка единомышленников.</div>
+                            <div class="sec3__box-item">Обмен опытом. Кейсы, которые можно реализовать здесь и сейчас.
+                            </div>
+                            <div class="sec3__box-item">Топовые спикеры, с которыми можно общаться на равных.</div>
+                            <div class="sec3__box-item">Это совершенно бесплатно.</div>
+
+                            <div class="sec3__box-item">Возможность принять участие онлайн из любой точки мира.</div>
+                        </div>
+                    </div>
+
+    </section>
+    <section class="program slide-3">
+        <div class="container">
+            <div class="title-center">Программа форума</div>
+
+            <div class="tabs">
+                <ul class="tabs__caption">
+                    <li class="active">15 апреля</li>
+                    <li class="">16 апреля</li>
+                </ul>
+                <div class="tabs__content active">
+                    <div class="program__item">
+                        <div class="program__item-time">
+                            09.30 – 10.00
+                        </div>
+                        <div class="program__item-description">Сбор участников</div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+                            10.00 – 10.15
+                        </div>
+                        <div class="program__item-description">
+                            Открытие Форума</div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+                            10.15 – 11.00
+
+                        </div>
+                        <div class="program__item-description"><span>Лекция <b>«Город и горожанин близкого будущего.
+                                    Тренды,
+                                    инновации, искусственный интеллект»</b></span>
+                            <span>Лекция <b>«Устойчивый город в условиях турбулентности: какой он? Репутационный капитал
+                                    города»</b></span>
+                        </div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+                            11.00 – 12.00
+
+                        </div>
+                        <div class="program__item-description"><b>Ток-шоу «Точки устойчивости»</B><br>
+                            Открытый разговор о текущей ситуации и планах развития города и компании</div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+
+                            12.00 – 12.45
+
+                        </div>
+                        <div class="program__item-description">Обед</div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+                            12.45 – 17.00
+                        </div>
+
+                        <div class="program__item-description-grid">
+                            <div>
+                                <div class="program__item-description-subtitle">Трек</div>
+                                <div class="program__item-description-title">ЛЮДИ</div>
+                                <div class="program__item-description-text">Развитие талантов. Город для горожан.
+                                    Образование будущего.</div>
+                            </div>
+                            <div>
+                                <div class="program__item-description-subtitle">Трек</div>
+                                <div class="program__item-description-title">СРЕДА ДЛЯ ЖИЗНИ</div>
+                                <div class="program__item-description-text">Развитие города. Общественные
+                                    пространства. Соучастие и партнерство.</div>
+                            </div>
+                            <div>
+                                <div class="program__item-description-subtitle">Трек</div>
+                                <div class="program__item-description-title">ТЕХНОЛОГИИ</div>
+                                <div class="program__item-description-text">Цифровизация городских сервисов.
+                                    Онлайн-инструменты. Тренды будущего.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+
+                            12.45 – 13.15
+
+                        </div>
+                        <div class="program__item-description"><b>Выступления спикеров по трекам</b></div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+                            13.15 –15.00
+                        </div>
+                        <div class="program__item-description"><b>Презентации успешных практик и кейсов по трекам</b>
+                        </div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+                            15.00 – 15.20
+                        </div>
+                        <div class="program__item-description">Перерыв</div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+                            15.20 – 16.30
+                        </div>
+                        <div class="program__item-description"><b>Дискуссионный клуб и лучшие практики по трекам</b>
+                        </div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+
+                            16.45 – 17.15
+                        </div>
+                        <div class="program__item-description"><b>Stand up шоу</b> </div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+
+                            17.15 – 18.00
+
+
+                        </div>
+                        <div class="program__item-description"><b>Ток-шоу «Норильск на карте мира»</b><span>
+                                Подведение итогов форума, обсуждение ключевых выводов и зон фокуса в развитии города
+                            </span></div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+                            18.00 – 18.15
+                        </div>
+                        <div class="program__item-description">Подведение итогов Форума
+                        </div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+                            18.15 – 20.00
+                        </div>
+                        <div class="program__item-description">Фуршет</div>
+                    </div>
+                </div>
+                <div class="tabs__content">
+                    <div class="program__item">
+                        <div class="program__item-time">
+
+                            11.30 – 12.00
+
+                        </div>
+                        <div class="program__item-description">Сбор участников</div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+
+
+                            12.00 – 12.15
+
+
+                        </div>
+                        <div class="program__item-description">Открытие дня</div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+
+                            12.15 – 16.00
+
+                        </div>
+                        <div class="program__item-description">Футурологический Хакатон
+                            <b>«Норильск на карте мира»</b>
+                        </div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+
+                            14.00 – 14.45
+
+                        </div>
+                        <div class="program__item-description">Бранч</div>
+                    </div>
+                    <div class="program__item">
+                        <div class="program__item-time">
+
+                            14.45 – 16.30
+
+                        </div>
+                        <div class="program__item-description">Продолжение Хакатона и подведение итогов
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div class="social">
+        <div class="container">
+            <div class="social__wrap">
+                <div class="social__item">
+                    <div class="social__title">Будьте на связи
+                        с&nbsp;единомышленниками</div>
+                    <div class="social__text">Следите за изменениями в программе форума и оперативно получайте ответы от
+                        экспертов.
+                        Скачайте приложение «Мир новых возможностей» (МНВ) и всегда оставайтесь на связи!</div>
+                    <div class="social__icon">
+                        <a href=""><img src="assets/img/app store.svg" alt=""></a>
+                        <a href=""><img src="assets/img/google play.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="social__item social__bg">
+                    <img class=social__phone src="assets/img/phone.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="speakers slide-4">
+        <div class="container">
+            <div class="title-center">спикеры</div>
+            <div class="speakers__box">
+                <div class="speakers__item">
+                    <div class="speakers__photo">
+                        <img src="assets/img/photo1.png" alt="">
+                    </div>
+                    <div class="speakers__name">Екатерина шульман</div>
+                    <div class="speakers__discr">Российский политолог и публицист. Специалист по проблемам
+                        законотворчества. Кандидат политических наук, доцент кафедры политических и правовых учений
+                        Московской высшей школы социальных и экономических наук.</div>
+                </div>
+                <div class="speakers__item">
+                    <div class="speakers__photo">
+                        <img src="assets/img/photo2.png" alt="">
+                    </div>
+                    <div class="speakers__name"> Алексей
+                        Фирсов</div>
+                    <div class="speakers__discr">Основатель ЦСП «Платформа», социолог, разработчик социальных программ,
+                        вице-президент РАСО, преподаватель ВШЭ, член Общественного совета ФАС. Регулярный колумнист
+                        Forbes.
+                    </div>
+                </div>
+                <div class="speakers__item">
+                    <div class="speakers__photo">
+                        <img src="assets/img/photo3.png" alt="">
+                    </div>
+                    <div class="speakers__name">Елена Зеленцова</div>
+                    <div class="speakers__discr">Заведующая кафедрой территориального развития им. В.Л. Глазычева ИОН
+                        РАНХиГС,
+                        научный руководитель Центра креативных индустрий ИОН РАНХиГС.</div>
+                </div>
+                <div class="speakers__item">
+                    <div class="speakers__photo">
+                        <img src="assets/img/photo4.png" alt="">
+                    </div>
+                    <div class="speakers__name">Виталий Недельский</div>
+                    <div class="speakers__discr">Ректор Горно-алтайского государственного университета, технологический
+                        предприниматель, кандидат политических наук, спикер, ректор, писатель.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="registration slide-5 ">
+        <div class="container">
+            <div class="registration__title">Хотите принять участие в форуме?</div>
+            <div class="registration__text">Регистрация на форум обязательна. Просим вас обращать внимание на изменения
+                в ограничениях, связанных с эпидемией коронавируса в даты проведения мероприятия.</div>
+            <div class="form">
+                <form action="" class="form__body">
+                    <div class="form__item">
+                        <div class="form__title">Выберите формат участия*</div>
+                        <select name="format" class="form__select" required>
+                            <option value selected disabled hidden>Выберите из списка</option>
+                            <option value="online">Онлайн</option>
+                            <option value="offline">Офлайн</option>
+                        </select>
+                    </div>
+                    <div class="form__box">
+                        <div class="form__item">
+                            <label class="form__lable" for="forName">Имя*</label>
+                            <input id="forName" type="text" name="name" class="form__input">
+                        </div>
+                        <div class="form__item">
+                            <label class="form__lable" for="forSurname">Фамилия*</label>
+                            <input id="forSurname" type="text" name="surname" class="form__input">
+                        </div>
+                        <div class="form__item">
+                            <label class="form__lable" for="forPhone">Телефон*</label>
+                            <input id="forPhone" type="number" name="phone" class="form__input">
+                        </div>
+                        <div class="form__item">
+                            <label class="form__lable" for="forEmail">Email*</label>
+                            <input id="forEmail" type="text" name="email" class="form__input">
+                        </div>
+                    </div>
+                    <div class="form__item">
+                        <div class="option">
+                            <div class="option__title">Направление/сфера деятельности</div>
+                            <div class="option__box">
+                                <div class="option__item">
+                                    <input id="forchoise1" type="radio" name="activity" value="1" class="option__input">
+                                    <label for="forchoise1" class="option__lable"><span>представитель НКО</span></lable>
+                                </div>
+                                <div class="option__item">
+                                    <input id="forchoise5" type="radio" name="activity" value="5" class="option__input">
+                                    <label for="forchoise5" class="option__lable"><span>педагог, представитель
+                                            ВУЗа</span>
+                                        </lable>
+                                </div>
+                                <div class="option__item">
+                                    <input id="forchoise2" type="radio" name="activity" value="2" class="option__input">
+                                    <label for="forchoise2" class="option__lable"><span>предприниматель</span></lable>
+                                </div>
+                                <div class="option__item">
+                                    <input id="forchoise6" type="radio" name="activity" value="6" class="option__input">
+                                    <label for="forchoise6" class="option__lable"><span>активный горожанин</span>
+                                        </lable>
+                                </div>
+                                <div class="option__item">
+                                    <input id="forchoise3" type="radio" name="activity" value="3" class="option__input">
+                                    <label for="forchoise3" class="option__lable"><span>волонтер или корпволонтер</span>
+                                        </lable>
+                                </div>
+
+                                <div class="option__item">
+                                    <input id="forchoise4" type="radio" name="activity" value="4" class="option__input">
+                                    <label for="forchoise4" class="option__lable"><span>представитель СМИ</span></lable>
+                                </div>
+                                <div class="option__item option__grid1">
+                                    <div>
+                                        <input id="forchoise7" type="radio" name="activity" value="7"
+                                            class="option__input" checked>
+                                        <label for="forchoise7" class="option__lable"><span>другое</span></lable>
+                                    </div>
+                                    <textarea class="form__textarea" name="" id=""></textarea>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__item">
+                        <div class="option">
+                            <div class="option__title">Как узнали о форуме?</div>
+                            <div class="option__box">
+                                <div class="option__item">
+                                    <input id="forchoise11" type="radio" name="group2" value="1" class="option__input">
+                                    <label for="forchoise11" class="option__lable"><span>из СМИ</span></lable>
+                                </div>
+                                <div class="option__item">
+                                    <input id="forchoise55" type="radio" name="group2" value="5" class="option__input">
+                                    <label for="forchoise55" class="option__lable"><span>наружная реклама</span>
+                                        </lable>
+                                </div>
+                                <div class="option__item">
+                                    <input id="forchoise22" type="radio" name="group2" value="2" class="option__input">
+                                    <label for="forchoise22" class="option__lable"><span>из социальных сетей</span>
+                                        </lable>
+                                </div>
+                                <div class="option__item option__grid2">
+                                    <div>
+                                        <input id="forchoise77" type="radio" name="group2" value="7"
+                                            class="option__input" checked>
+                                        <label for="forchoise77" class="option__lable"><span>другое</span></lable>
+                                    </div>
+                                    <textarea class="form__textarea" name="" id="forchoise77"></textarea>
+                                </div>
+                                <div class="option__item">
+                                    <input id="forchoise66" type="radio" name="group2" value="6" class="option__input">
+                                    <label for="forchoise66" class="option__lable"><span>от знакомых</span>
+                                        </lable>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <div class="checkbox">
+                                <input id="forArgeement" type="checkbox" name="agreement" value="" class="check__input">
+                                <label for="forArgeement" class="checkbox__lable"><span>Согласен с условиями
+                                        политики в отношении обработки персональных данных</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="form__button">
+                        Отправить заявку
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <img src="assets/img/footer.png" alt="" class="footer__logo">
+                </div>
+
+                <div class="footer__text">Следите за событиями форума в нашем сообществе ВКонтакте и пишите, если
+                    возникли вопросы:</div>
+
+                <div class="footer__conf">
+                    <div class="footer__conf-text">© 2008-2022 ПАО «ГМК «Норильский никель»</div>
+                    <div class="footer__conf-link"><a href="">Политика конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="footer__social"><a href="" class="footer__link">Сообщество ВКонтакте</a></div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="./assets/css/animate.css" type="text/css" />
+
+    <!-- FOR MODAL -->
+    <script src="./assets/js/classie.js"></script>
+    <script src="./assets/js/modalEffects.js"></script>
+    <script>
+    var polyfilter_scriptpath = './assets/js/';
+    </script>
+    <script src="./assets/js/cssParser.js"></script>
+    <script src="./assets/js/css-filters-polyfill.js"></script>
+    <!-- FOR MODAL -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/jquery.maskedinput.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+
+    <!-- https://github.com/verlok/vanilla-lazyload#-getting-started---html -->
+    <script src="./assets/js/lazyload.js"></script>
+
+    <!-- Counter -->
+    <script src="./assets/js/counter/jquery.cookie.js"></script>
+    <script src="./assets/js/counter/jquery.plugin.js"></script>
+    <script src="./assets/js/counter/jquery.countdown.js"></script>
+    <script src="./assets/js/counter/jquery.countdown-ru.js"></script>
+    <script>
+    var endDateTime = new Date();
+    var nowDateTime = new Date(3600 * 24 * 1000);
+    </script>
+    <!-- End Counter -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <link rel="stylesheet" href="./assets/css/swiper/swiper-bundle.min.css">
+    <script src="./assets/js/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+    var lazyLoadInstance = new LazyLoad({});
+    /*
+    var swiper = new Swiper('.slider', {
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '.btn-next',
+            prevEl: '.btn-prev',
+        },
+    });
+    
+    */
+    </script>
+</body>
+
+</html>
